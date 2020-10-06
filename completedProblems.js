@@ -24,3 +24,10 @@ function reverse(str) {
   }
   return reversedStr;
 }
+
+//alternate solution with .reduce()
+function reverse(str) {
+  return str.split('').reduce(function(acc, char) {
+    return acc = char + acc;
+  }, '');
+}
