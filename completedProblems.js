@@ -49,3 +49,31 @@ function reverse(str) {
 function palindrome(str) {
   return str === str.split('').reverse().join('');
 }
+
+
+
+// _________________________________________________________________________________
+// _________________________________________________________________________________
+
+// REVERSE INT
+
+// --- Directions
+// Given an integer, return an integer that is the reverse
+// ordering of numbers.
+// --- Examples
+//   reverseInt(15) === 51
+//   reverseInt(981) === 189
+//   reverseInt(500) === 5
+//   reverseInt(-15) === -51
+//   reverseInt(-90) === -9
+
+function reverseInt(n) {
+  if (n >= 0) {
+    return Number(n.toString().split('').reverse().join(''));
+  } else {
+    let nArr = n.toString().split('').reverse();
+    nArr.pop();
+    nArr.unshift('-');
+    return Number(nArr.join(''));
+  }
+}
