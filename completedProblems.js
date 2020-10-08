@@ -77,3 +77,32 @@ function reverseInt(n) {
     return Number(nArr.join(''));
   }
 }
+
+// _________________________________________________________________________________
+// _________________________________________________________________________________
+
+
+// --- Directions
+// Given a string, return the character that is most
+// commonly used in the string.
+// --- Examples
+// maxChar("abcccccccd") === "c"
+// maxChar("apple 1231111") === "1"
+
+
+
+function maxChar(str) {
+  let charCount = {};
+  let maxCount = 0;
+  let maxChar;
+  str.split('').forEach(function(char) {
+    charCount[char] = charCount[char] || 1;
+  })
+  for (let char in charCount) {
+    if (charCount[char] > maxCount) {
+      maxCount = charCount[char];
+      maxChar = char;
+    }
+  }
+  return maxChar;
+}
