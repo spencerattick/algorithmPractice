@@ -168,3 +168,15 @@ function chunk(array, size) {
   }
  return newArr;
 }
+
+// ALTERNATE SOLUTION USING .SLICE()
+
+function chunk(array, size) {
+  let chunkedArr = [];
+  let incrementor = 0;
+  while (incrementor < array.length) {
+    chunkedArr.push(array.slice(incrementor, incrementor + size));
+    incrementor+=size;
+  }
+  return chunkedArr;
+}
