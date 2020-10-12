@@ -81,6 +81,7 @@ function reverseInt(n) {
 // _________________________________________________________________________________
 // _________________________________________________________________________________
 
+// MAXCHAR
 
 // --- Directions
 // Given a string, return the character that is most
@@ -110,6 +111,7 @@ function maxChar(str) {
 // _________________________________________________________________________________
 // _________________________________________________________________________________
 
+// FIZZBUZZ
 
 // --- Directions
 // Write a program that console logs the numbers
@@ -142,7 +144,7 @@ function fizzBuzz(n) {
 // _________________________________________________________________________________
 // _________________________________________________________________________________
 
-
+// CHUNK
 
 // --- Directions
 // Given an array and chunk size, divide the array into many subarrays
@@ -179,4 +181,34 @@ function chunk(array, size) {
     incrementor+=size;
   }
   return chunkedArr;
+}
+
+// _________________________________________________________________________________
+// _________________________________________________________________________________
+
+// ANAGRAMS
+
+
+// --- Directions
+// Check to see if two provided strings are anagrams of eachother.
+// One string is an anagram of another if it uses the same characters
+// in the same quantity. Only consider characters, not spaces
+// or punctuation.  Consider capital letters to be the same as lower case
+// --- Examples
+//   anagrams('rail safety', 'fairy tales') --> True
+//   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
+//   anagrams('Hi there', 'Bye there') --> False
+
+function anagrams(stringA, stringB) {
+  return stringA
+  .replace(/[^a-zA-Z ]/g, "")
+  .toLowerCase().split('')
+  .sort().join('')
+  ===
+  stringB
+  .replace(/[^a-zA-Z ]/g, "")
+  .toLowerCase()
+  .split('')
+  .sort()
+  .join('');
 }
