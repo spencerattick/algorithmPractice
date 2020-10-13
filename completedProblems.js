@@ -236,7 +236,6 @@ function capitalize(str) {
   return newArr.join(' ');
 }
 
-module.exports = capitalize;
 
 // _________________________________________________________________________________
 // _________________________________________________________________________________
@@ -278,4 +277,44 @@ function steps(n) {
   }
 }
 
-module.exports = steps;
+// _________________________________________________________________________________
+// _________________________________________________________________________________
+
+// PYRAMID
+
+// --- Directions
+// Write a function that accepts a positive number N.
+// The function should console log a pyramid shape
+// with N levels using the # character.  Make sure the
+// pyramid has spaces on both the left *and* right hand sides
+// --- Examples
+//   pyramid(1)
+//       '#'
+//   pyramid(2)
+//       ' # '
+//       '###'
+//   pyramid(3)
+//       '  #  '
+//       ' ### '
+//       '#####'
+
+function pyramid(n) {
+  let counter = n;
+  let row = '#';
+  let longestRow = n - 1;
+  let center;
+  let i = 1;
+  while (longestRow) {
+    row = ' ' + row + ' ';
+    longestRow--;
+  }
+  row = row.split('');
+  center = Math.floor(row.length / 2);
+  while (counter) {
+    console.log(row.join(''));
+    row[center + i] = '#';
+    row[center - i] = '#';
+    counter--;
+    i++;
+  }
+}
