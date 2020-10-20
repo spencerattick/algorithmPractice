@@ -345,6 +345,10 @@ function vowels(str) {
   return vowelCounter;
 }
 
+// _________________________________________________________________________________
+// _________________________________________________________________________________
+
+
 //matrix
 
 // --- Directions
@@ -409,4 +413,32 @@ function matrix(n) {
   }
 
   return largeArr;
+}
+
+
+// _________________________________________________________________________________
+// _________________________________________________________________________________
+
+//FIBONACCI ITERATIVE
+
+// --- Directions
+// Print out the n-th entry in the fibonacci series.
+// The fibonacci series is an ordering of numbers where
+// each number is the sum of the preceeding two.
+// For example, the sequence
+//  [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+// forms the first ten entries of the fibonacci series.
+// Example:
+//   fib(4) === 3
+
+function fib(n) {
+  let fibonacci = [];
+  for (let i = 0; i <= n; i++) {
+    if (fibonacci.length < 2) {
+      fibonacci.push(i)
+    } else {
+      fibonacci.push(fibonacci[i - 1] + fibonacci[i - 2]);
+    }
+  }
+  return fibonacci[n];
 }
