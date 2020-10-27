@@ -471,3 +471,25 @@ class Queue {
     return this.queue.pop();
   }
 }
+
+
+// _________________________________________________________________________________
+// _________________________________________________________________________________
+
+
+//WEAVE
+
+const Queue = require('./queue');
+
+function weave(sourceOne, sourceTwo) {
+  let returnQueue = new Queue();
+
+  while (sourceOne.peek() || sourceTwo.peek()) {
+    if (sourceOne.peek()) {
+      returnQueue.add(sourceOne.remove());
+    } if (sourceTwo.peek()) {
+      returnQueue.add(sourceTwo.remove())
+    }
+  }
+  return returnQueue;
+}
